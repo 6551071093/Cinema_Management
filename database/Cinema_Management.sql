@@ -1,5 +1,7 @@
 -- Khởi tạo Database
-CREATE DATABASE IF NOT EXISTS CinemaManagement;
+CREATE DATABASE IF NOT EXISTS CinemaManagement
+DEFAULT CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
 USE CinemaManagement;
 -- 1. Bảng ACCOUNT (Hỗ trợ Auth, JavaMail và Soft Delete)
 CREATE TABLE ACCOUNT (
