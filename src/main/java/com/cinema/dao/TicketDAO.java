@@ -6,23 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TicketDAO {
-    public List<String> getBookedSeats(int showtimeId) {
-        List<String> bookedSeats = new ArrayList<>();
-        String sql = "SELECT seat_number FROM TICKET WHERE showtime_id = ?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setInt(1, showtimeId);
-            try (ResultSet rs = stmt.executeQuery()) {
-                while (rs.next()) {
-                    bookedSeats.add(rs.getString("seat_number"));
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return bookedSeats;
-    }
-
     public boolean addTicket(Ticket ticket) {
         String sql = "INSERT INTO TICKET (invoice_id, showtime_id, seat_number) VALUES (?, ?, ?)";
         try (Connection conn = DatabaseConnection.getConnection();
