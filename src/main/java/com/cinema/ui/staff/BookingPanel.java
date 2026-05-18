@@ -118,7 +118,6 @@ public class BookingPanel extends JPanel {
                     java.text.SimpleDateFormat sdfTime = new java.text.SimpleDateFormat("HH:mm");
                     java.text.SimpleDateFormat sdfDate = new java.text.SimpleDateFormat("dd/MM/yyyy");
                     
-                    // CHUẨN XÁC: Sử dụng getStartTime() như code gốc của bạn
                     String start = st.getStartTime() != null ? sdfTime.format(st.getStartTime()) : "00:00";
                     String end = st.getEndTime() != null ? sdfTime.format(st.getEndTime()) : "00:00";
                     String dateStr = st.getStartTime() != null ? sdfDate.format(st.getStartTime()) : "--/--/----"; 
