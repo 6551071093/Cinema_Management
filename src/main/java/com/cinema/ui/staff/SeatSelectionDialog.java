@@ -2,7 +2,7 @@ package com.cinema.ui.staff;
 
 import com.cinema.dao.RoomDAO;
 import com.cinema.dao.ShowtimeDAO;
-import com.cinema.dao.TicketDAO; // ĐÃ SỬA: Thêm import TicketDAO
+import com.cinema.dao.TicketDAO;
 import com.cinema.dao.DatabaseConnection;
 import com.cinema.entity.Showtime;
 import com.cinema.entity.Room;
@@ -18,7 +18,7 @@ public class SeatSelectionDialog extends JDialog {
     private List<String> selectedSeats = new ArrayList<>(); // Danh sách ghế nhân viên đang chọn (Màu xanh)
     private RoomDAO roomDAO = new RoomDAO();
     private ShowtimeDAO showtimeDAO = new ShowtimeDAO(); 
-    private TicketDAO ticketDAO = new TicketDAO(); // ĐÃ SỬA: Khai báo đối tượng ticketDAO
+    private TicketDAO ticketDAO = new TicketDAO();
     private Account currentStaff;
     
     private JPanel pnlSeatGrid;
@@ -61,7 +61,7 @@ public class SeatSelectionDialog extends JDialog {
         // 3. Nút xác nhận thanh toán dưới đáy
         btnConfirm = new JButton("TIẾP TỤC THANH TOÁN (Đã chọn 0 ghế)");
         btnConfirm.setPreferredSize(new Dimension(0, 55));
-        btnConfirm.setBackground(new Color(40, 167, 69)); // Màu xanh lá chủ đạo hành động
+        btnConfirm.setBackground(new Color(40, 167, 69));
         btnConfirm.setForeground(Color.WHITE);
         btnConfirm.setFont(new Font("Segoe UI", Font.BOLD, 15));
         btnConfirm.setFocusPainted(false);
@@ -112,7 +112,6 @@ public class SeatSelectionDialog extends JDialog {
                 btnSeat.setVerticalTextPosition(SwingConstants.BOTTOM);
                 btnSeat.setFocusPainted(false);
 
-                // ĐÃ SỬA: Thay thế listBookedSeats thành occupiedSeats
                 if (occupiedSeats.contains(seatCode)) {
                     if (imgRed != null) {
                         btnSeat.setIcon(imgRed);
